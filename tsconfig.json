@@ -1,9 +1,9 @@
 {
-    "compilerOptions": {
-        "esModuleInterop": true
-      , "module": "commonjs"
-      , "removeComments": true
-      , "strict": true
-      , "target": "ESNext"
-    }
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"module": "commonjs",
+		"removeComments": true,
+		"strict": true,
+		"target": "ESNext"
+	}
 }

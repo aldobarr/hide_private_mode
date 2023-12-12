@@ -1,21 +1,21 @@
 {
     "scripts": {
-        "build": "parcel build src/manifest.json",
-        "watch": "parcel watch src/manifest.json",
+        "build": "parcel build src/manifest.json --config @parcel/config-webextension",
+        "watch": "parcel watch src/manifest.json --host localhost --config @parcel/config-webextension",
         "start": "web-ext run -s ./dist",
         "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
         "package": "npm run package:parcel && npm run package:web-ext",
         "package:parcel": "NODE_ENV=production npm run build -- --no-source-maps",
         "package:web-ext": "web-ext build -s ./dist --overwrite-dest"
     },
-    "devDependencies": {
-        "@types/firefox-webext-browser": "^67.0.2",
-        "fake-indexeddb": "^2.1.1",
-        "parcel-bundler": "^1.12.4",
-        "parcel-plugin-clean-dist": "0.0.6",
-        "parcel-plugin-web-extension": "^1.6.1",
-        "tslint": "^5.20.1",
-        "typescript": "^3.8.3",
-        "web-ext": "^3.2.1"
+    "dependencies": {
+        "@parcel/config-webextension": "^2.10.3",
+        "@types/firefox-webext-browser": "^120.0.0",
+        "fake-indexeddb": "^5.0.1",
+        "parcel": "^2.10.3",
+        "parcel-plugin-clean-dist": "^0.0.6",
+        "tslint": "^6.1.3",
+        "typescript": "^5.3.3",
+        "web-ext": "^7.9.0"
     }
 }

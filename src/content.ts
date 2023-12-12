@@ -15,9 +15,9 @@ import FDBVersionChangeEvent from "fake-indexeddb/lib/FDBVersionChangeEvent";
 
 
 Object.defineProperty(window, "indexedDB", {
-    get () {
-        return indexedDB;
-    }
+	get() {
+		return indexedDB;
+	}
 });
 
 window.IDBCursor = FDBCursor;
@@ -34,27 +34,26 @@ window.IDBVersionChangeEvent = FDBVersionChangeEvent;
 
 
 if (!("serviceWorker" in navigator)) {
-    Object.defineProperty(navigator, "serviceWorker", {
-        get () {
-            return new class extends EventTarget {
-                get controller () {
-                    return null;
-                }
-              , get ready () {
-                    return new Promise(() => {});
-                }
-
-              , register () {
-                    return new Promise(() => {});
-                }
-              , getRegistration () {
-                    return new Promise(() => {});
-                }
-              , getRegistrations () {
-                    return new Promise(() => {});
-                }
-              , startMessages () {}
-            };
-        }
-    });
+	Object.defineProperty(navigator, "serviceWorker", {
+		get () {
+			return new class extends EventTarget {
+				get controller() {
+					return null;
+				}
+				get ready() {
+					return new Promise(() => {});
+				}
+				register() {
+					return new Promise(() => {});
+				}
+				getRegistration() {
+					return new Promise(() => {});
+				}
+				getRegistrations() {
+					return new Promise(() => {});
+				}
+				startMessages() {}
+			};
+		}
+	});
 }
